@@ -133,14 +133,21 @@ nav ul li a:hover {
     min-width: 300px;
     text-align: right;
     margin-left: 20px; /* Space between text and image */
+    /* Ensure the container for the image takes full available space in its flex item */
+    display: flex; /* Use flexbox to make image fill */
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Slightly more rounded corners */
+    /* Removed border-radius and border */
+    border-radius: 0; /* No border radius */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger, elegant shadow */
-    border: 3px solid var(--light-grey); /* Subtle border */
+    border: none; /* No border */
+    display: block; /* Ensures it behaves like a block element for full width */
+    width: 100%; /* Make the image fill the width of its parent (.hero-image) */
 }
 
 .button {
