@@ -4,44 +4,62 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f8f8f8; /* Very light grey background */
+    color: #444; /* Darker grey for text */
 }
 
 .container {
-    width: 80%;
+    width: 85%; /* Slightly wider container for more breathing room */
+    max-width: 1100px; /* Max width to keep content readable */
     margin: auto;
     overflow: hidden;
     padding: 20px 0;
 }
 
+/* Color Palette Variables */
+:root {
+    --dark-grey: #333;
+    --medium-grey: #555;
+    --light-grey: #e0e0e0; /* Used for borders or subtle accents */
+    --accent-purple: #9b7fdc; /* A soft, muted purple */
+    --hover-purple: #7a63ad; /* Slightly darker for hover states */
+    --background-light: #f8f8f8;
+    --background-dark: #2a2a2a;
+    --text-color: #444;
+    --text-light: #fefefe;
+}
+
+
 /* Header */
 header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
+    background: var(--background-dark); /* Dark grey header */
+    color: var(--text-light);
+    padding-top: 40px; /* Increased padding */
+    min-height: 80px;
+    border-bottom: 2px solid var(--accent-purple); /* Subtle purple line */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: normal;
+    letter-spacing: 1px; /* A little spacing for elegance */
 }
 
 header p {
-    font-size: 1.2em;
-    margin-top: 5px;
+    font-size: 1.3em;
+    margin-top: 8px;
+    opacity: 0.9;
 }
 
 /* Navigation */
 nav {
-    background: #555;
-    color: #fff;
+    background: var(--medium-grey); /* Medium grey nav bar */
+    color: var(--text-light);
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 nav ul {
@@ -52,27 +70,29 @@ nav ul {
 
 nav ul li {
     display: inline;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #77aaff;
+    color: var(--accent-purple); /* Purple on hover */
 }
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-background.jpg') no-repeat center center/cover; /* Replace with an elegant background image */
-    color: #fff;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-background.jpg') no-repeat center center/cover;
+    color: var(--text-light);
     text-align: center;
-    padding: 100px 0;
-    height: 400px; /* Adjust as needed */
+    padding: 120px 0; /* More vertical padding */
+    height: auto; /* Allow height to adjust */
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,136 +103,192 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    max-width: 900px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1000px;
     width: 100%;
 }
 
 .hero-text {
     flex: 1;
+    min-width: 300px; /* Ensure text block doesn't get too small */
     text-align: left;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 .hero-text h2 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
+    font-size: 3.8em;
+    margin-bottom: 15px;
     font-weight: normal;
+    line-height: 1.1;
 }
 
 .hero-text p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0.95;
 }
 
 .hero-image {
     flex: 1;
+    min-width: 300px;
     text-align: right;
+    margin-left: 20px; /* Space between text and image */
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger, elegant shadow */
+    border: 3px solid var(--light-grey); /* Subtle border */
 }
 
 .button {
     display: inline-block;
-    color: #fff;
-    background: #77aaff;
-    padding: 12px 25px;
+    color: var(--text-light);
+    background: var(--accent-purple);
+    padding: 15px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .button:hover {
-    background: #5588cc;
+    background: var(--hover-purple);
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Sections */
 section {
-    padding: 40px 0;
-    background: #fff;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 60px 0; /* More vertical padding for sections */
+    background: var(--background-light);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Lighter shadow */
+    border-radius: 5px; /* Rounded section corners */
 }
 
 section h2 {
-    color: #333;
+    color: var(--dark-grey);
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-size: 3em;
     font-weight: normal;
+    position: relative;
+}
+
+section h2::after { /* Underline effect for headings */
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-purple);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
 }
 
 /* About Section */
 #about p {
-    font-size: 1.1em;
+    font-size: 1.15em;
     text-align: justify;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    max-width: 800px; /* Limit paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Contact Section */
 .social-links {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .social-links a {
-    color: #77aaff;
+    color: var(--accent-purple);
     text-decoration: none;
-    font-size: 1.5em;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+    font-size: 2em; /* Larger icons */
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
-    color: #333;
+    color: var(--hover-purple);
+    transform: translateY(-3px); /* Lift effect on icons */
 }
 
 /* Footer */
 footer {
-    background: #333;
-    color: #fff;
+    background: var(--dark-grey);
+    color: var(--text-light);
     text-align: center;
-    padding: 20px 0;
-    margin-top: 30px;
+    padding: 25px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
 }
 
 footer p {
     margin: 0;
+    opacity: 0.8;
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .hero-text h2 {
+        font-size: 3em;
+    }
+    .hero-text p {
+        font-size: 1.3em;
+    }
+    section h2 {
+        font-size: 2.5em;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         width: 90%;
     }
 
     header h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
 
     .hero-content {
         flex-direction: column;
+        text-align: center; /* Center align text on small screens */
     }
 
     .hero-text, .hero-image {
         padding-right: 0;
         text-align: center;
-    }
-
-    .hero-text h2 {
-        font-size: 2.5em;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .hero-image {
-        margin-top: 30px;
+        margin-top: 40px;
+    }
+
+    .hero-text h2 {
+        font-size: 2.8em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
     }
 
     nav ul li {
         display: block;
-        padding: 5px 0;
+        padding: 8px 0;
+    }
+
+    section h2 {
+        font-size: 2.2em;
+    }
+
+    #about p {
+        font-size: 1em;
     }
 }
