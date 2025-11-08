@@ -4,8 +4,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* Very light grey background */
-    color: #444; /* Darker grey for text */
+    background-color: #000000; /* Black background */
+    color: #f0f0f0; /* Light grey for text on black background */
 }
 
 .container {
@@ -18,21 +18,21 @@ body {
 
 /* Color Palette Variables */
 :root {
-    --dark-grey: #333;
-    --medium-grey: #555;
-    --light-grey: #e0e0e0; /* Used for borders or subtle accents */
+    --dark-grey: #000000; /* Black */
+    --medium-grey: #1a1a1a; /* Very dark grey */
+    --light-grey: #333333; /* Dark grey for borders or subtle accents */
     --accent-purple: #9b7fdc; /* A soft, muted purple */
     --hover-purple: #7a63ad; /* Slightly darker for hover states */
-    --background-light: #f8f8f8;
-    --background-dark: #2a2a2a;
-    --text-color: #444;
-    --text-light: #fefefe;
+    --background-light: #0a0a0a; /* Almost black */
+    --background-dark: #000000; /* Black */
+    --text-color: #f0f0f0; /* Light grey */
+    --text-light: #ffffff; /* White */
 }
 
 
 /* Header */
 header {
-    background: var(--background-dark); /* Dark grey header */
+    background: var(--background-dark); /* Black header */
     color: var(--text-light);
     padding-top: 40px; /* Increased padding */
     min-height: 80px;
@@ -55,11 +55,11 @@ header p {
 
 /* Navigation */
 nav {
-    background: var(--medium-grey); /* Medium grey nav bar */
+    background: var(--medium-grey); /* Very dark grey nav bar */
     color: var(--text-light);
     text-align: center;
     padding: 12px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow */
 }
 
 nav ul {
@@ -87,7 +87,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('hero-background.jpg') no-repeat center center/cover;
     color: var(--text-light);
     text-align: center;
     padding: 120px 0; /* More vertical padding */
@@ -144,7 +144,7 @@ nav ul li a:hover {
     height: auto;
     /* Removed border-radius and border */
     border-radius: 0; /* No border radius */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger, elegant shadow */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Stronger, elegant shadow */
     border: none; /* No border */
     display: block; /* Ensures it behaves like a block element for full width */
     width: 100%; /* Make the image fill the width of its parent (.hero-image) */
@@ -170,14 +170,15 @@ nav ul li a:hover {
 /* Sections */
 section {
     padding: 60px 0; /* More vertical padding for sections */
-    background: var(--background-light);
+    background: var(--background-light); /* Almost black */
     margin-bottom: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Lighter shadow */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Lighter shadow */
     border-radius: 5px; /* Rounded section corners */
+    color: var(--text-color); /* Light text on dark background */
 }
 
 section h2 {
-    color: var(--dark-grey);
+    color: var(--text-light); /* White for headings */
     text-align: center;
     margin-bottom: 40px;
     font-size: 3em;
@@ -225,9 +226,20 @@ section h2::after { /* Underline effect for headings */
     transform: translateY(-3px); /* Lift effect on icons */
 }
 
+#contact p a {
+    color: var(--accent-purple); /* Make email link purple */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact p a:hover {
+    color: var(--hover-purple);
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
-    background: var(--dark-grey);
+    background: var(--dark-grey); /* Black footer */
     color: var(--text-light);
     text-align: center;
     padding: 25px 0;
